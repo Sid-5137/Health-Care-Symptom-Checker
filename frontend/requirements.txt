@@ -1,3 +1,4 @@
 Django==5.2.7
 requests
+python==3.12.11
 python-dotenv

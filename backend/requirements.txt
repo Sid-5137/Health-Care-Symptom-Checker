@@ -1,3 +1,4 @@
+python==3.12.11
 fastapi
 pydantic
 requests
