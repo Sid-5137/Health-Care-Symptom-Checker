@@ -1,0 +1,31 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.env
+.DS_Store
+*.log
+**/.mypy_cache/
+**/.pytest_cache/
+**/.venv/
+**/env/
+**/venv/
+
+# Editor/project files
+.vscode/
+.idea/
+
+# Docker
+**/Dockerfile
+**/.dockerignore
+
+# Django static/media (if collected/generated)
+frontend/static/
+frontend/media/
+
+# Coverage/test output
+htmlcov/
+coverage.*
+
+.sqlite3

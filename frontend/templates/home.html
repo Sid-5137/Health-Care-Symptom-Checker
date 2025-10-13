@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+/* Local tweaks to make the form look modern without touching global styles */
+.home-form .form-control, .home-form .form-select { border-radius: 1rem; padding: 0.85rem 1rem; }
+.home-form .form-control:focus, .home-form .form-select:focus { box-shadow: 0 0 0 0.2rem rgba(13,110,253,.15); }
+.badge-soft-info { background: rgba(13,110,253,.1); color: #0d6efd; border: 1px solid rgba(13,110,253,.2); }
+</style>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-lg border-0 rounded-4 mb-4">
+                <div class="card-body p-4 p-md-5 home-form">
+                    <h2 class="card-title text-center mb-2" style="font-size:2rem; font-weight:600; color:#0d6efd;">Check Your Symptoms</h2>
+                    <p class="text-center text-muted mb-4">Describe what you’re feeling in simple words. We’ll suggest possible conditions and what to do next.</p>
+                    <form method="post" novalidate onsubmit="this.querySelector('button[type=submit]').disabled=true; this.querySelector('button[type=submit]').innerText='Checking...';">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_symptoms" class="form-label" style="font-size:1.1rem;">Describe your symptoms <span class="text-danger">*</span></label>
+                            {{ form.symptoms }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_target_language" class="form-label" style="font-size:1.1rem;">Preferred Language</label>
+                            {{ form.target_language }}
+                        </div>
+                        <div class="form-check mb-4">
+                            {{ form.consider_family_history }}
+                            <label class="form-check-label" for="id_consider_family_history">{{ form.consider_family_history.label }}</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Check Now</button>
+                        </div>
+                    </form>
+                    {% if error %}
+                        <div class="alert alert-danger mt-3" role="alert" style="font-size:1.05rem;">{{ error }}</div>
+                    {% endif %}
+                    {% if used_family_history %}
+                        <div class="text-center mt-3">
+                            <span class="badge badge-soft-info rounded-pill px-3 py-2">Considering your family health history</span>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if result %}
+            <div class="card shadow border-0 rounded-4 mt-4">
+                <div class="card-body p-4 p-md-5">
+                    <h4 class="card-title text-success mb-3" style="font-size:1.25rem;">Probable Conditions</h4>
+                    <ul class="list-group list-group-flush mb-4" style="font-size:1.05rem;">
+                        {% for cond in result.probable_conditions %}
+                            <li class="list-group-item">{{ cond }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h4 class="card-title text-info mt-2 mb-2" style="font-size:1.2rem;">Recommendations</h4>
+                    {% if rec_list %}
+                        <ul class="ms-3" style="font-size:1.05rem;">
+                            {% for item in rec_list %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p style="font-size:1.05rem;">{{ result.recommendations }}</p>
+                    {% endif %}
+                    <p class="mt-3 mb-0 text-danger small fst-italic">{{ result.disclaimer }}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
