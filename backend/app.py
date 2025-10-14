@@ -10,13 +10,11 @@ from dotenv import load_dotenv, find_dotenv
 from huggingface_hub import InferenceClient
 from sqlalchemy.orm import Session
 try:
-    # If run as a package: `python -m uvicorn backend.app:app --reload`
     from .db import SessionLocal, QueryHistory, DATABASE_URL
     from .translation import Translator
 except ImportError:
-    # If run from backend directory: `uvicorn app:app --reload`
-    from db import SessionLocal, QueryHistory  # type: ignore
-    from translation import Translator  # type: ignore
+    from db import SessionLocal, QueryHistory 
+    from translation import Translator  
 from sqlalchemy.exc import SQLAlchemyError
 
 class SymptomRequest(BaseModel):
@@ -44,7 +42,6 @@ dotenv_path = find_dotenv(usecwd=True)
 if dotenv_path:
     load_dotenv(dotenv_path)
 else:
-    # Fallback: look for .env at the project root (one level above backend/)
     base_dir = os.path.dirname(os.path.dirname(__file__))
     candidate = os.path.join(base_dir, ".env")
     if os.path.exists(candidate):

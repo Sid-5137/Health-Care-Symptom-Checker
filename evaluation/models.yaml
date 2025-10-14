@@ -1,0 +1,22 @@
+models:
+  - name: backend_default
+    type: backend
+    base_url: "http://localhost:8000"
+    description: "FastAPI service (current production model)"
+    enabled: true
+  - name: llama_70b_direct
+    type: huggingface_chat
+    model_id: "meta-llama/Llama-3.1-70B-Instruct"
+    enabled: true
+  - name: mistral_7b
+    type: huggingface_chat
+    model_id: "mistralai/Mistral-7B-Instruct"
+    enabled: true
+  - name: phi3_mini
+    type: huggingface_chat
+    model_id: "microsoft/Phi-3-mini-4k-instruct"
+    enabled: true
+  - name: gemma_2_9b
+    type: huggingface_chat
+    model_id: "google/gemma-2-9b-it"
+    enabled: true

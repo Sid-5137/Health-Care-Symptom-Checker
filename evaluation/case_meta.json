@@ -1,0 +1,54 @@
+{
+  "case_01_respiratory": {
+    "requires_red_flags": true,
+    "expected_primary_keywords": ["pneumonia", "asthma", "bronchitis"],
+    "translation": false
+  },
+  "case_02_cardiac": {
+    "requires_red_flags": true,
+    "expected_primary_keywords": ["myocardial", "heart attack", "acute coronary"],
+    "translation": false
+  },
+  "case_03_pediatric": {
+    "requires_red_flags": false,
+    "expected_primary_keywords": ["scarlet", "rheumatic", "viral"],
+    "translation": false
+  },
+  "case_04_diabetes": {
+    "requires_red_flags": true,
+    "expected_primary_keywords": ["diabetes", "hyperglycemia"],
+    "translation": false
+  },
+  "case_05_mental_health": {
+    "requires_red_flags": false,
+    "expected_primary_keywords": ["depression", "mood"],
+    "translation": false
+  },
+  "case_06_translation_hi": {
+    "requires_red_flags": false,
+    "expected_primary_keywords": ["सिरदर्द", "माइग्रेन", "तनाव"],
+    "translation": true
+  },
+  "case_07_translation_ta": {
+    "requires_red_flags": false,
+    "expected_primary_keywords": ["வயிற்று", "அழற்சி", "காஸ்ட்ரைட்டிஸ்"],
+    "translation": true
+  },
+  "case_08_abuse_filter": {
+    "abusive": true,
+    "requires_red_flags": false,
+    "expected_primary_keywords": [],
+    "translation": false
+  },
+  "case_09_non_medical": {
+    "non_medical": true,
+    "requires_red_flags": false,
+    "expected_primary_keywords": [],
+    "translation": false
+  },
+  "case_10_emergency": {
+    "requires_red_flags": true,
+    "expected_primary_keywords": ["meningitis", "infection"],
+    "translation": false
+  }
+}

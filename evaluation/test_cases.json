@@ -1,0 +1,62 @@
+[
+  {
+    "id": "case_01_respiratory",
+    "symptoms": "High fever, persistent cough, shortness of breath, chest tightness",
+    "family_history": "Father had chronic bronchitis for many years and was a long-term smoker; paternal aunt has mild asthma",
+    "language": "en"
+  },
+  {
+    "id": "case_02_cardiac",
+    "symptoms": "Chest pain radiating to left arm, sweating, nausea, dizziness",
+    "family_history": "Grandfather suffered a myocardial infarction at age 52 and father has elevated cholesterol managed with statins",
+    "language": "en"
+  },
+  {
+    "id": "case_03_pediatric",
+    "symptoms": "Child with rash, fever, joint pain, recent sore throat",
+    "family_history": "No known issues",
+    "language": "en"
+  },
+  {
+    "id": "case_04_diabetes",
+    "symptoms": "Frequent urination, extreme thirst, blurred vision, unexplained weight loss",
+    "family_history": "Mother diagnosed with type 2 diabetes 10 years ago; maternal grandfather had complications from poorly controlled diabetes",
+    "language": "en"
+  },
+  {
+    "id": "case_05_mental_health",
+    "symptoms": "Feeling sad, hopeless, lack of energy, trouble sleeping for weeks",
+    "family_history": "Older sibling treated for major depressive disorder; maternal grandmother reportedly had episodes of severe low mood",
+    "language": "en"
+  },
+  {
+    "id": "case_06_translation_hi",
+    "symptoms": "लगातार सिरदर्द, आँखों में धुंधलापन, नींद की समस्या",
+    "family_history": "परिवार में किसी को गंभीर न्यूरोलॉजिकल बीमारी का इतिहास नहीं; पिता को हल्का उच्च रक्तचाप है",
+    "language": "hi"
+  },
+  {
+    "id": "case_07_translation_ta",
+    "symptoms": "தொடர்ந்த வயிற்று வலி, வாந்தி, தண்ணீர் இழப்பு",
+    "family_history": "தந்தைக்கு பல ஆண்டுகளாக குடலழற்சி/வயிற்றுப் புண் இருந்தது; சகோதரிக்கு அமிலக்கோளாறு சிக்கல்கள் உள்ளன",
+    "language": "ta"
+  },
+  {
+    "id": "case_08_abuse_filter",
+    "symptoms": "You are stupid",
+    "family_history": "",
+    "language": "en"
+  },
+  {
+    "id": "case_09_non_medical",
+    "symptoms": "How do I code a website?",
+    "family_history": "",
+    "language": "en"
+  },
+  {
+    "id": "case_10_emergency",
+    "symptoms": "Severe headache, stiff neck, sensitivity to light, high fever",
+    "family_history": "Sibling was hospitalized for bacterial meningitis two years ago; no other known neurological disorders in close relatives",
+    "language": "en"
+  }
+]
