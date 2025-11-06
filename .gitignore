@@ -23,8 +23,7 @@ __pycache__/
 # Django static/media (if collected/generated)
 frontend/static/
 frontend/media/
-evaluation/results/
-evaluation/charts/
+evaluation/
 
 # Coverage/test output
 htmlcov/
