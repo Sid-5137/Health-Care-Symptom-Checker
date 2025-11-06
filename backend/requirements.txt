@@ -5,6 +5,7 @@ sqlalchemy
 huggingface_hub
 python-dotenv
 deep-translator
-uvicorn
+gunicorn
+uvicorn[standard]
 pytest
 httpx
