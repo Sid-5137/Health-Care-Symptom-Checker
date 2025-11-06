@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, Column, Integer, Text, DateTime
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL_BACKEND")
 if not DATABASE_URL:
     raise RuntimeError("DATABASE_URL environment variable is missing. Add it in Render.")
 

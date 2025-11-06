@@ -50,7 +50,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "frontend.urls"
+ROOT_URLCONF = "frontend_app.urls"
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ WSGI_APPLICATION = "frontend_app.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL")
+        default=os.getenv("DATABASE_URL_FRONTEND")
     )
 }
 
