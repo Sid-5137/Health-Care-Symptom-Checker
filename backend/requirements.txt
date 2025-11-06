@@ -5,7 +5,7 @@ requests
 sqlalchemy
 huggingface_hub
 python-dotenv
-googletrans==4.0.0rc1
+googletrans
 uvicorn
 pytest
 httpx
