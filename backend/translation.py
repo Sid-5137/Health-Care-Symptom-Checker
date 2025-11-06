@@ -1,5 +1,5 @@
 from typing import Optional
-from googletrans import Translator as GoogleTranslator
+from deep_translator import GoogleTranslator
 
 class Translator:
     def __init__(self):

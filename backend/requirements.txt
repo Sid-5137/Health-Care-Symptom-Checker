@@ -1,11 +1,11 @@
-python==3.12
+python
 fastapi
 pydantic
 requests
 sqlalchemy
 huggingface_hub
 python-dotenv
-googletrans==4.0.0rc1
+deep-translator
 uvicorn
 pytest
 httpx
