@@ -9,7 +9,7 @@ import os
 import requests
 
 # FastAPI backend endpoint (moved to backend/). Allow override via env var.
-BACKEND_BASE = os.getenv("BACKEND_URL", "https://health-care-symptom-checker-1.onrender.com").rstrip("/")
+BACKEND_BASE = os.getenv("BACKEND_URL").rstrip("/")
 BACKEND_URL = f"{BACKEND_BASE}/check"
 
 def signup_view(request):
