@@ -20,7 +20,7 @@ def signup_view(request):
             login(request, user)
             UserProfile.objects.get_or_create(user=user)
             # Use namespaced URL to avoid NoReverseMatch when app is namespaced
-            return redirect("frontend_app:profile")
+            return redirect("profile")
     else:
         form = SignUpForm()
     return render(request, "signup.html", {"form": form})
@@ -32,7 +32,7 @@ def login_view(request):
             user = form.get_user()
             login(request, user)
             # Use namespaced URL for consistency
-            return redirect("frontend_app:home")
+            return redirect("home")
     else:
         form = LoginForm()
     return render(request, "registration/login.html", {"form": form})
@@ -40,7 +40,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     # Redirect to our custom login route (namespaced) to avoid /accounts/login/
-    return redirect("frontend_app:login")
+    return redirect("login")
 
 @login_required
 def profile_view(request):
@@ -64,8 +64,8 @@ def history_clear(request):
     if request.method == "POST":
         SymptomHistory.objects.filter(user=request.user).delete()
         messages.success(request, "Your history has been cleared.")
-        return redirect("frontend_app:history")
-    return redirect("frontend_app:history")
+        return redirect("history")
+    return redirect("history")
 
 @login_required
 def home(request):
