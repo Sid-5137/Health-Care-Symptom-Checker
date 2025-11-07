@@ -29,6 +29,6 @@ urlpatterns = [
     path('accounts/login/', frontend_views.login_view, name='accounts_login_redirect'),
     path('accounts/', include('django.contrib.auth.urls')),
 
-    # Let the app's URLconf provide namespaced routes like frontend_app:home.
-    path('', include('frontend_app.urls')),
+    # Include app URLs with namespace so templates can reverse frontend_app:* routes.
+    path('', include(('frontend_app.urls', 'frontend_app'), namespace='frontend_app')),
 ]
