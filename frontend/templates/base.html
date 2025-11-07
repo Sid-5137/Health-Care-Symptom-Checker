@@ -10,12 +10,12 @@
         .navbar-brand { font-weight: bold; letter-spacing: 1px; }
         .footer { background: #f1f1f1; color: #888; padding: 1rem 0; text-align: center; margin-top: 3rem; }
         .main-content { min-height: 80vh; }
-    </style>
+    </style>    
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
-    <a class="navbar-brand" href="{% url 'frontend_app:home' %}">
+    <a class="navbar-brand" href="{% url 'login' %}">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-heart-pulse me-2" viewBox="0 0 16 16">
                 <path d="M1 8s1.5-6 7-6 7 6 7 6-1.5 6-7 6-7-6-7-6zm7-4.5C3.5 3.5 2 8 2 8s1.5 4.5 6 4.5S14 8 14 8s-1.5-4.5-6-4.5z"/>
                 <path d="M8 5.5a.5.5 0 0 1 .5.5v2.293l1.146 1.147a.5.5 0 0 1-.708.708l-1.5-1.5A.5.5 0 0 1 7.5 8V6a.5.5 0 0 1 .5-.5z"/>
@@ -29,20 +29,20 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
                     <li class="nav-item me-2">
-                        <a class="btn btn-outline-light px-4 rounded-pill fw-semibold" href="{% url 'frontend_app:profile' %}">Profile</a>
+                        <a class="btn btn-outline-light px-4 rounded-pill fw-semibold" href="{% url 'profile' %}">Profile</a>
                     </li>
                     <li class="nav-item me-2">
-                        <a class="btn btn-outline-light px-4 rounded-pill fw-semibold" href="{% url 'frontend_app:history' %}">History</a>
+                        <a class="btn btn-outline-light px-4 rounded-pill fw-semibold" href="{% url 'history' %}">History</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-danger px-4 rounded-pill fw-semibold text-white" href="{% url 'frontend_app:logout' %}">Logout</a>
+                        <a class="btn btn-danger px-4 rounded-pill fw-semibold text-white" href="{% url 'logout' %}">Logout</a>
                     </li>
                 {% else %}
                     <li class="nav-item me-2">
-                        <a class="btn btn-outline-light px-4 rounded-pill fw-semibold" href="{% url 'frontend_app:login' %}">Login</a>
+                        <a class="btn btn-outline-light px-4 rounded-pill fw-semibold" href="{% url 'login' %}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-light px-4 rounded-pill fw-semibold text-primary border" href="{% url 'frontend_app:signup' %}">Sign Up</a>
+                        <a class="btn btn-light px-4 rounded-pill fw-semibold text-primary border" href="{% url 'signup' %}">Sign Up</a>
                     </li>
                 {% endif %}
             </ul>
