@@ -27,14 +27,14 @@
                             </div>
                         {% endfor %}
                         </div>
-                        <form method="post" action="{% url 'frontend_app:history_clear' %}" class="mt-3">
+                        <form method="post" action="{% url 'history_clear' %}" class="mt-3">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-outline-danger btn-sm rounded-pill">Clear History</button>
                         </form>
                     {% else %}
                         <div class="alert alert-info">No history found.</div>
                     {% endif %}
-                    <a href="{% url 'frontend_app:home' %}" class="btn btn-link mt-3">&larr; Back to Home</a>
+                    <a href="{% url 'home' %}" class="btn btn-link mt-3">&larr; Back to Home</a>
                 </div>
             </div>
         </div>
